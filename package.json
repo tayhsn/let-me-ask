@@ -2,9 +2,9 @@
   "name": "nlw-discover",
   "version": "1.0.0",
   "description": "Projeto desenvolvido para gerenciamento de perguntas. NLW Discover",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon"
+    "start": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/tayhsn/ask-me/issues"
   },
-  "homepage": "https://github.com/tayhsn/ask-me#readme"
+  "homepage": "https://github.com/tayhsn/ask-me#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }

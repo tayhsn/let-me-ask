@@ -1,0 +1,20 @@
+{
+  "name": "nlw-discover",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para gerenciamento de perguntas. NLW Discover",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tayhsn/ask-me.git"
+  },
+  "keywords": [],
+  "author": "Tayanne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tayhsn/ask-me/issues"
+  },
+  "homepage": "https://github.com/tayhsn/ask-me#readme"
+}

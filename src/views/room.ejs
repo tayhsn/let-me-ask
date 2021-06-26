@@ -1,172 +1,150 @@
 <!DOCTYPE html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="/styles/global.css">
-	<link rel="stylesheet" href="/styles/room.css">
-	<link rel="stylesheet" href="/styles/modal.css">
+   <link rel="stylesheet" href="/styles/global.css">
+   <link rel="stylesheet" href="/styles/room.css">
+   <link rel="stylesheet" href="/styles/modal.css">
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap"
-		rel="stylesheet">
-	
-	<script src="/scripts/main.js" defer type="module"></script>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet">
 
-	<title>Rocket.Q - Ask and Answer</title>
+   <script src="/scripts/main.js" defer type="module"></script>
+
+   <title>Rocket.Q - Ask and Answer</title>
 </head>
 
 <body>
-	<div id="room" class="content">
-		<header>
-			<a href="/">
-				<img src="/images/logo.svg" alt="Rocket.Q Logo" />
-			</a>
-			<div class="buttons">
-				<div class="button outLined" id="room-id" data-id="323243">
-					#323243
-					<img src="/images/copy.svg" alt="Copiar numero da sala" />
-				</div>
-				<a href="#" class="button">
-					<img src="/images/users-white.svg" alt="Criar uma sala">
-					Criar Sala
-				</a>
-			</div>
-		</header>
+   <div id="room" class="content">
+      <header>
+         <a href="/">
+            <img src="/images/logo.svg" alt="Rocket.Q Logo" />
+         </a>
+         <div class="buttons">
+            <div class="button outLined" id="room-id" data-id="<%= roomID %>">
+               #<%= roomID %>
+                  <img src="/images/copy.svg" alt="Copiar numero da sala" />
+            </div>
+            <a href="/create-pass" class="button">
+               <img src="/images/users-white.svg" alt="Criar uma sala">
+               Criar Sala
+            </a>
+         </div>
+      </header>
 
-		<main>
-			<section id="question-form">
-				<h2>Faça sua pergunta</h2>
-				<form action="POST">
-					<label class="sr-only" for="question">O que você quer perguntar?</label>
-					<textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
-					<footer>
-						<div>
-							<div>
-								<img src="/images/lock_black.svg" alt="Pergunta Anônima">
-							</div>
-							Esta pergunta é anônima
-						</div>
-						<button>Enviar</button>
-					</footer>
-				</form>
-			</section>
+      <main>
+         <section id="question-form">
+            <h2>Faça sua pergunta</h2>
+            <form action="/question/create/<%= roomID %>" method="POST">
+               <label class="sr-only" for-id="question">O que você quer perguntar?</label>
+               <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
+               <footer>
+                  <div>
+                     <div>
+                        <img src="/images/lock_black.svg" alt="Pergunta Anônima">
+                     </div>
+                     Esta pergunta é anônima
+                  </div>
+                  <button>Enviar</button>
+               </footer>
+            </form>
+         </section>
 
-			<section id="questions">
-				<h2 class="sr-only">Perguntas da comunidade</h2>
+         <section id="questions">
+            <h2 class="sr-only">Perguntas da comunidade</h2>
 
-				<div class="questions">
+            <div class="questions">
 
-					<div class="question-wrapper">
-						<div class="question-content">
-							<div class="user">
-								<img src="/images/Avatar.svg" alt="User who asked">
-							</div>
-							<div class="question">
-								<p>O que é TypeScript?</p>
-							</div>
-						</div>
+               <% if(isNoQuestions) { %>
+                  <%- include('parts/no-questions') %>
+                     <% } %>
 
-						<div class="actions">
-							<a href="#" class="check" data-id="2">
-								<img src="/images/check.svg" alt="Check seen">
-								Marcar como lida
-							</a>
-							<a href="#" class="delete" data-id="2">
-								<img src="/images/trash.svg" alt="Delete">
-								Excluir
-							</a>
-						</div>
-					</div>
+                        <% questions.forEach(question=> { %>
 
-					<div class="question-wrapper">
-						<div class="question-content">
-							<div class="user">
-								<img src="/images/Avatar.svg" alt="User who asked">
-							</div>
-							<div class="question">
-								<p>O que é JavaScript?</p>
-							</div>
-						</div>
+                           <div class="question-wrapper">
+                              <div class="question-content">
+                                 <div class="user">
+                                    <img src="/images/Avatar.svg" alt="User who asked">
+                                 </div>
+                                 <div class="question">
+                                    <p>
+                                       <%= question.title %>
+                                    </p>
+                                 </div>
+                              </div>
 
-						<div class="actions">
-							<a href="#" class="check" data-id="3">
-								<img src="/images/check.svg" alt="Check seen">
-								Marcar como lida
-							</a>
-							<a href="#" class="delete" data-id="3">
-								<img src="/images/trash.svg" alt="Delete">
-								Excluir
-							</a>
-						</div>
-					</div>
+                              <div class="actions">
+                                 <a href="#" class="check" data-id="<%= question.id %>">
+                                    <img src="/images/check.svg" alt="Check seen">
+                                    Marcar como lida
+                                 </a>
+                                 <a href="#" class="delete" data-id="<%= question.id %>">
+                                    <img src="/images/trash.svg" alt="Delete">
+                                    Excluir
+                                 </a>
+                              </div>
+                           </div>
 
-					<div class="question-wrapper">
-						<div class="question-content">
-							<div class="user">
-								<img src="/images/Avatar.svg" alt="User who asked">
-							</div>
-							<div class="question">
-								<p>Quais os principais conceitos do Paradigma Funcional na Programação Orientada a Objetos</p>
-							</div>
-						</div>
+                           <% }); %>
 
-						<div class="actions">
-							<a href="#" class="check" data-id="4">
-								<img src="/images/check.svg" alt="Check seen">
-								Marcar como lida
-							</a>
-							<a href="#" class="delete" data-id="4">
-								<img src="/images/trash.svg" alt="Delete">
-								Excluir
-							</a>
-						</div>
-					</div>
+                              <% questionsRead.forEach(questionRead=> { %>
 
-					<div class="question-wrapper read">
-						<div class="question-content">
-							<div class="user">
-								<img src="/images/Avatar.svg" alt="User who asked">
-							</div>
-							<div class="question">
-								<p>O que é Lógica de Programação?</p>
-							</div>
-						</div>
+                                 <div class="question-wrapper read">
+                                    <div class="question-content">
+                                       <div class="user">
+                                          <img src="/images/Avatar.svg" alt="User who asked">
+                                       </div>
+                                       <div class="question">
+                                          <p>
+                                             <%= questionRead.title %>>
+                                          </p>
+                                       </div>
+                                    </div>
 
-						<div class="actions">
-							<a href="#" class="delete" data-id="1">
-								<img src="/images/trash.svg" alt="Delete">
-								Excluir
-							</a>
-						</div>
-					</div>
+                                    <div class="actions">
+                                       <a href="#" class="delete" data-id="<%= questionRead.id %>">
+                                          <img src="/images/trash.svg" alt="Delete">
+                                          Excluir
+                                       </a>
+                                    </div>
+                                 </div>
+                                 <% }); %>
 
-				</div>
-			</section>
-		</main>
+            </div>
+         </section>
+      </main>
 
-	</div>
+      <footer>
+         <div class="exit">
+            <a href="/" class="button">Sair da sala</a>
+         </div>
+      </footer>
+   </div>
 
-	<!-- MODAL -->
-	<div class="modal-wrapper">
-		<div class="modal">
-			<h2>Excluir Pergunta</h2>
-			<p>Tem certeza que deseja excluir a pergunta?</p>
 
-			<form action="#" method="POST">
-				<label class="sr-only" for="password">Digite a sua senha</label>
-				<input type="password" id="password" name="password" placeholder="Digite a sua senha">
+   <!-- MODAL -->
+   <div class="modal-wrapper">
+      <div class="modal">
+         <h2>Excluir Pergunta</h2>
+         <p>Tem certeza que deseja excluir a pergunta?</p>
 
-				<div class="buttons">
-					<div class="button cancel grey">Cancelar</div>
-					<button class="red">Sim, excluir</button>
-				</div>
-			</form>
-		</div>
-	</div>
-	
+         <form action="#" method="POST">
+            <label class="sr-only" for="password">Digite a sua senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite a sua senha">
+
+            <div class="buttons">
+               <div class="button cancel grey">Cancelar</div>
+               <button class="red">Sim, excluir</button>
+            </div>
+         </form>
+      </div>
+   </div>
+
 </body>
+
 </html>

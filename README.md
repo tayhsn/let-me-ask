@@ -16,7 +16,7 @@
 <br>
 
 <p align="center">
-  <img alt="Rocket.Q" src="github/demo.mp4" width="100%">
+  <img alt="Rocket.Q" src="https://github.com/tayhsn/let-me-ask/blob/main/github/demo.mp4" width="100%">
 </p>
 
 ## 🚀 Tecnologias

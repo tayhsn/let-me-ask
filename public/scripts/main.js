@@ -1,4 +1,4 @@
-import watchCopy from './copy.js';
+import { buttonCopy, linkCopy } from './copy.js';
 import Modal from './modal.js';
 
 const modal = Modal();
@@ -22,7 +22,7 @@ function handleClick(e, check = true) {
 	const text = check ? 'Marcar como lida' : 'Excluir';
 	const slug = check ? 'check' : 'delete';
 	const roomID = document.querySelector('#room-id').dataset.id;
-   const questionID = event.target.dataset.id;
+  const questionID = event.target.dataset.id;
 
 	const form = document.querySelector('.modal form');
 	form.setAttribute('action', `/question/${roomID}/${questionID}/${slug}`);
@@ -37,7 +37,11 @@ function handleClick(e, check = true) {
 	modal.open();
 }
 
+// copiar o link para envio
+const roomID = document.querySelector('#room-id').dataset.id;
+linkCopy(`https://letmeask.herokuapp.com/room/${roomID}`)
 
-watchCopy()
+// copiar codigo do botão
+buttonCopy()
 
 

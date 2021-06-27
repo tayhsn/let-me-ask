@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> c8fe7bef201478f6702e9b2ec3a5eabe1db67079
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -17,7 +20,11 @@
 <br>
 
 <p align="center">
+<<<<<<< HEAD
   <img alt="Rocket.Q" src="github/demo.mp4" width="100%">
+=======
+  <img alt="Rocket.Q" src="https://github.com/tayhsn/let-me-ask/blob/main/github/demo.mp4" width="100%">
+>>>>>>> c8fe7bef201478f6702e9b2ec3a5eabe1db67079
 </p>
 
 ## 🚀 Tecnologias
@@ -37,17 +44,30 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 O Rocket.Q é uma aplicação de interação através de perguntas, sendo possível criar uma sala para internautas anônimos fazerem perguntas e o criador da sala em posse de uma senha gerenciar essas perguntas e marcar como lidas.
 
 ## ✅ Implementações
+<<<<<<< HEAD
 	- Adicinado a função copiar código no botão existente.
 	- Copiar a url completa da sala para convidar amigos.
 	- Botão para sair da sala.
+=======
+	* Adicinado a função copiar código no botão existente.
+	* Copiar a url completa da sala para convidar amigos.
+	* Botão para sair da sala.
+>>>>>>> c8fe7bef201478f6702e9b2ec3a5eabe1db67079
 	
 
 ## 🔖 Aprendizado
 
+<<<<<<< HEAD
 Essa trilha me proporcinou grandes aprendizados, entre eles: método de análise de interface para melhorar o alinhamentos dos elementos da página. Workflow na escrita de CSS com seletores personalizados. Boas práticas na construção do HTML priorizando a acessbilidade, como a classe screen-only. E pensar implementações que melhorassem a experiência do usu
 
+=======
+Essa trilha me proporcinou grandes aprendizados, entre eles: método de análise de interface para melhorar o alinhamentos dos elementos da página. Workflow na escrita de CSS com seletores personalizados. Boas práticas na construção do HTML priorizando a acessbilidade, como a classe screen-only. E pensar implementações que melhorassem a experiência do usuário.
+>>>>>>> c8fe7bef201478f6702e9b2ec3a5eabe1db67079
 
 ---
 
 Feito com ♥ by TayhSN. Projeto idealizado by Rocketseat :wave: [Participe da nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> c8fe7bef201478f6702e9b2ec3a5eabe1db67079

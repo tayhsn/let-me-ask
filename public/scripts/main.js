@@ -1,3 +1,4 @@
+import watchCopy from './copy.js';
 import Modal from './modal.js';
 
 const modal = Modal();
@@ -35,3 +36,8 @@ function handleClick(e, check = true) {
 
 	modal.open();
 }
+
+
+watchCopy()
+
+

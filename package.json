@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tayhsn/ask-me.git"
+    "url": "git+https://github.com/tayhsn/let-me-ask.git"
   },
   "keywords": [],
   "author": "Tayanne",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tayhsn/ask-me/issues"
+    "url": "https://github.com/tayhsn/let-me-ask/issues"
   },
-  "homepage": "https://github.com/tayhsn/ask-me#readme",
+  "homepage": "https://github.com/tayhsn/let-me-ask#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",

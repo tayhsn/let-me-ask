@@ -13,4 +13,4 @@ server.use(express.urlencoded({extended: true}))
 
 server.use(router);
 
-server.listen(process.env.port || 3000, () => console.log("Server is running...."));
+server.listen(process.env.PORT || 3000, () => console.log("Server is running...."));

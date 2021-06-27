@@ -39,7 +39,7 @@ function handleClick(e, check = true) {
 
 // copiar o link para envio
 const roomID = document.querySelector('#room-id').dataset.id;
-linkCopy(`https://letmeask.herokuapp.com/room/${roomID}`)
+linkCopy(`https://let-me-ask.herokuapp.com/room/${roomID}`)
 
 // copiar codigo do botão
 buttonCopy()

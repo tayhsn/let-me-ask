@@ -180,3 +180,8 @@ footer .exit a {
  padding: 1.4rem;
  background-color: var(--red);
 }
+
+.no-questions a {
+  text-decoration: none;
+  color: var(--blue);
+}

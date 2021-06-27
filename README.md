@@ -40,7 +40,7 @@ O Rocket.Q é uma aplicação de interação através de perguntas, sendo possí
 * Copiar a url completa da sala para convidar amigos.
 * Botão para sair da sala.	
 
-## 🔖 Aprendizado
+## 🔖 Aprendizados
 
 Essa trilha me proporcinou grandes aprendizados, entre eles: método de análise de interface para melhorar o alinhamentos dos elementos da página. Workflow na escrita de CSS com seletores personalizados. Boas práticas na construção do HTML priorizando a acessbilidade, como a classe screen-only. E pensar implementações que melhorassem a experiência do usuário.
 
